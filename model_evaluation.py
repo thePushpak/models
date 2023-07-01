@@ -2,12 +2,15 @@ import torch
 import numpy as np
 from torch.utils.data import TensorDataset, DataLoader, SequentialSampler
 from sklearn.metrics import classification_report
-from transformers import AutoModel, BertTokenizerFast
+from transformers import AutoModel, AutoTokenizer
 
 # Load the preprocessed data tensors
 test_seq = torch.load('test_seq.pt')
 test_mask = torch.load('test_mask.pt')
 test_y = torch.load('test_y.pt')
+
+# Load the saved tokenizer
+tokenizer = AutoTokenizer.from_pretrained('tokenizer')
 
 # Define a batch size
 batch_size = 32
