@@ -19,7 +19,7 @@ test_mask = torch.load('test_mask.pt')
 test_y = torch.load('test_y.pt')
 
 # Define a batch size
-batch_size = 32  # Reduce the batch size to save memory
+batch_size = 16  # Reduce the batch size to save memory
 
 # Wrap tensors in a TensorDataset
 train_data = TensorDataset(train_seq, train_mask, train_y)
